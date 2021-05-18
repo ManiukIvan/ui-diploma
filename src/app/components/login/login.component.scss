@@ -1,0 +1,57 @@
+h1{
+  text-align:center;
+}
+form{
+  border-color: lightgrey;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 8px;
+  background-color: white;
+  max-width: 30%;
+  margin: auto;
+}
+div{
+  text-align:center;
+}
+
+.div-error{
+  color: red;
+}
+
+input[type=text], input[type=password]{
+  width: 100%;
+  padding: 12px 20px;
+  margin:auto;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.input-text{
+  width: 100%;
+  padding: 12px 20px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+button{
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 14px 20px;
+  cursor: pointer;
+}
+button[disabled=disabled], button:disabled {
+  color: white;
+  background-color: rgba(149, 140, 250, 0.51);
+  border: none;
+  width: 100%;
+  padding: 14px 20px;
+  cursor: pointer;
+}
+
+em{
+  position: absolute;
+  margin-top: 15px;
+  margin-left: 10px;
+}
+

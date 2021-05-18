@@ -3,14 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AppComponent } from './app.component';
+import { LoginComponent } from './components/login/login.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
-    MDBBootstrapModule
+    MDBBootstrapModule.forRoot(),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
