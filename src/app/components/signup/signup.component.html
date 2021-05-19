@@ -1,0 +1,86 @@
+<h1>
+  <img src="../../../assets/images/logo.png">
+</h1>
+
+<form class="text-center border border-light p-5" [formGroup]="registerForm">
+
+  <p class="h4 mb-4">Sign up</p>
+
+  <div class="form-row mb-4">
+    <!-- First name -->
+    <div class="col">
+      <div class="md-form md-outline">
+        <input mdbInput type="text" id="inputFirstName" class="form-control" formControlName="firstName">
+        <label>First name</label>
+        <div *ngIf="registerForm.controls['firstName'].touched && registerForm.controls['firstName'].errors">
+          <div class="div-error" *ngIf="registerForm.controls['firstName'].errors.required">First name is required</div>
+          <div class="div-error" *ngIf="registerForm.controls['firstName'].errors.maxlength">First name must not be longer than 25 characters</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Last name -->
+    <div class="col">
+      <div class="md-form md-outline">
+        <input mdbInput type="text" id="inputLastName" class="form-control" formControlName="lastName">
+        <label>Last name</label>
+        <div *ngIf="registerForm.controls['lastName'].touched && registerForm.controls['lastName'].errors">
+          <div class="div-error" *ngIf="registerForm.controls['lastName'].errors.required">Last name is required</div>
+          <div class="div-error" *ngIf="registerForm.controls['lastName'].errors.maxlength">Last name must not be longer
+            than 25 characters
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- E-mail -->
+  <div class="md-form md-outline">
+    <input mdbInput type="text" id="inputLogin" class="form-control" formControlName="login">
+    <label>Login</label>
+    <div *ngIf="registerForm.controls['login'].touched && registerForm.controls['login'].errors">
+      <div class="div-error" *ngIf="registerForm.controls['login'].errors.required">Loogin is required</div>
+      <div class="div-error" *ngIf="registerForm.controls['login'].errors.email">Email must be a valid email address
+      </div>
+    </div>
+  </div>
+
+  <!-- Password -->
+  <div class="md-form md-outline">
+    <input mdbInput [type]="hidePassword ? 'password' : 'text'" formControlName="password">
+    <label>Password</label>
+    <em class="fas fa-lock fa-lg" (click)="changeHidePasswordValue()" *ngIf="hidePassword"></em>
+    <em class="fas fa-unlock fa-lg" (click)="changeHidePasswordValue()" *ngIf="!hidePassword"></em>
+    <div *ngIf="registerForm.controls['password'].touched && registerForm.controls['password'].errors">
+      <div class="div-error" *ngIf="registerForm.controls['password'].errors.required">Password is required</div>
+      <div class="div-error" *ngIf="registerForm.controls['password'].errors.maxlength">Password must not be longer than 25 characters</div>
+      <div class="div-error" *ngIf="registerForm.controls['password'].errors.minlength">Password must be at least 6 characters</div>
+      <div class="div-error" *ngIf="registerForm.controls['password'].errors.pattern">Password can contain only
+        alphanumeric characters plus "_"
+      </div>
+    </div>
+  </div>
+
+  <!-- Confirm password -->
+  <div class="md-form md-outline">
+    <input mdbInput [type]="hideConfirmPassword ? 'password' : 'text'" formControlName="confirmPassword">
+    <label class="mat-label-password">Confirm password</label>
+    <em class="fas fa-lock fa-lg" (click)="changeHideConfirmPasswordValue()" *ngIf="hideConfirmPassword"></em>
+    <em class="fas fa-unlock fa-lg" (click)="changeHideConfirmPasswordValue()" *ngIf="!hideConfirmPassword"></em>
+    <div *ngIf="registerForm.controls['confirmPassword'].touched && registerForm.controls['confirmPassword'].errors">
+      <div class="div-error" *ngIf="registerForm.controls['confirmPassword'].errors.required">Password is required</div>
+      <div class="div-error" *ngIf="registerForm.controls['confirmPassword'].errors.maxlength">Password must not be longer than 25 characters</div>
+      <div class="div-error" *ngIf="registerForm.controls['confirmPassword'].errors.minlength">Password must be at least 6 characters</div>
+      <div class="div-error" *ngIf="registerForm.controls['confirmPassword'].errors.mustMatch">Password must match</div>
+      <div class="div-error" *ngIf="registerForm.controls['password'].errors?.pattern">Password can contain only alphanumeric characters plus "_"</div>
+    </div>
+  </div>
+
+  <!-- Sign up button -->
+  <button mdbBtn color="info" class="my-4" type="submit" [disabled]="!registerForm.valid">Sign up</button>
+
+  <!-- Sign in -->
+  <p>Have an account?
+    <a href="">Sign in</a>
+  </p>
+</form>
