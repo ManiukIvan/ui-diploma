@@ -8,6 +8,7 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { SignupComponent } from './components/signup/signup.component';
 import { SignupPageComponent } from './pages/signup-page/signup-page.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SignupPageComponent } from './pages/signup-page/signup-page.component';
   imports: [
     BrowserModule,
     MDBBootstrapModule.forRoot(),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

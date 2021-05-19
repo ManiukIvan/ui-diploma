@@ -1,5 +1,5 @@
 <h1>
-  <img src="../../../assets/images/logo.png">
+  <img src="../../../assets/images/logo.png" alt="Maniuk Ivan's diploma project">
 </h1>
 
 <form class="text-center border border-light p-5" [formGroup]="registerForm">
@@ -36,7 +36,7 @@
 
   <!-- E-mail -->
   <div class="md-form md-outline">
-    <input mdbInput type="text" id="inputLogin" class="form-control" formControlName="login">
+    <input mdbInput type="text" id="inputEmail" class="form-control" formControlName="login">
     <label>Login</label>
     <div *ngIf="registerForm.controls['login'].touched && registerForm.controls['login'].errors">
       <div class="div-error" *ngIf="registerForm.controls['login'].errors.required">Loogin is required</div>
@@ -81,6 +81,6 @@
 
   <!-- Sign in -->
   <p>Have an account?
-    <a href="">Sign in</a>
+    <a  routerLink="/login">Sign in</a>
   </p>
 </form>
